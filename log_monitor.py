@@ -15,7 +15,7 @@ def follow(file_path): # Generator function to follow the log file
         yield line
 
 def monitor_ssh():
-    print("Monitoring {LOG_FILE_PATH} for failed login attempts...")
+    print(f"Monitoring {LOG_FILE_PATH} for failed login attempts...")
     try:
         with open(LOG_FILE_PATH, "r") as log_file:
             log_lines = follow(log_file)
