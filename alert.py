@@ -23,7 +23,7 @@ def send_discord_alert(message): # sends the message to discord in a background 
             {
                 "title": "🚨 HIDS SECURITY ALERT",
                 "description": message,
-                "color": 16711680
+                "color": 16711680,
                 "timestamp": datetime.datetime.utcnow().isoformat()
             }
         ]
