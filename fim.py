@@ -20,11 +20,20 @@ for f in files_to_monitor:
     print(f"Baseline created: {baseline}")
 
 # monitoring for changes:
-print("Monitoring for changes. Change the file to trigger the alert.")
-while True:
-    time.sleep(5)  # Check every 5 seconds
+def start_fim():
+    # creating a baseline on startup:
+    print("[FIM] Creating baseline...")
     for f in files_to_monitor:
-        current_hash = calculate_hash(f)
-        if baseline[f] != current_hash:
-            print(f"ALERT: File {f} has been modified!. New Hash: {current_hash}")
-            baseline[f] = current_hash  # Update baseline to new hash
+        baseline[f] = calculate_hash(f)
+        print(f"[FIM] Baseline created for {f}: {baseline[f]}. Monitoring now for changes...")
+
+    while True:
+        time.sleep(5)  # Check every 5 seconds
+        for f in files_to_monitor:
+            current_hash = calculate_hash(f)
+            if baseline[f] != current_hash:
+                print(f"[FIM] ALERT: File {f} has been modified!. New Hash: {current_hash}")
+                baseline[f] = current_hash  # Update baseline to new hash
+
+if __name__ == "__main__":
+    start_fim()
