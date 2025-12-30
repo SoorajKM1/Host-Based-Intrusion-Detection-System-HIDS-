@@ -14,7 +14,7 @@ def follow(file_path): # Generator function to follow the log file
             continue
         yield line
 
-def monitor_ssh():
+def start_log_monitor():
     print(f"Monitoring {LOG_FILE_PATH} for failed login attempts...")
     try:
         with open(LOG_FILE_PATH, "r") as log_file:
@@ -28,4 +28,4 @@ def monitor_ssh():
         print(f"Error: Permission denied when trying to read {LOG_FILE_PATH}.")
 
 if __name__ == "__main__":
-    monitor_ssh()
+    start_log_monitor()
