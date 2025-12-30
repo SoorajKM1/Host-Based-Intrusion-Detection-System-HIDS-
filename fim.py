@@ -3,6 +3,7 @@
 import hashlib
 import os
 import time
+from alert import log_alert
 
 files_to_monitor = ["testfile.txt"]
 baseline = {}
@@ -32,7 +33,7 @@ def start_fim():
         for f in files_to_monitor:
             current_hash = calculate_hash(f)
             if baseline[f] != current_hash:
-                print(f"[FIM] ALERT: File {f} has been modified!. New Hash: {current_hash}")
+                log_alert(f"FILE INTEGRITY ERROR: {f} has been modified! New Hash: {current_hash}")
                 baseline[f] = current_hash  # Update baseline to new hash
 
 if __name__ == "__main__":

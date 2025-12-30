@@ -3,6 +3,7 @@
 # We know that Ubuntu saves every log in attempt and it is saved at: /var/log/auth.log
 import time
 import os 
+from alert import log_alert
 LOG_FILE_PATH = "/var/log/auth.log"
 
 def follow(file_path): # Generator function to follow the log file
@@ -21,7 +22,7 @@ def start_log_monitor():
             log_lines = follow(log_file)
             for line in log_lines:
                 if "Failed password" in line:
-                    print(f"ALERT: Failed login attempt detected: {line.strip()}")
+                    log_alert(f"SSH BRUTE FORCE DETECTED: {line.strip()}")
     except FileNotFoundError: #accounting for file not found error
         print(f"Error: Log file {LOG_FILE_PATH} not found.")
     except PermissionError: #accounting for permission issues as well
