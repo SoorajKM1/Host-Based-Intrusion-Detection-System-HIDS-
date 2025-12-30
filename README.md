@@ -27,7 +27,7 @@ The system is composed of three modular components:
 * **Language:** Python 3.x
 * **OS:** Linux (Ubuntu Server 24.04/22.04)
 * **Libraries:** `hashlib`, `re`, `threading`, `requests`, `python-dotenv`
-* **Tools:** VirtualBox (Headless Mode), SSH, VS Code
+* **Tools:** VirtualBox, SSH, VS Code
 
 ## ⚙️ Installation & Setup
 Follow the steps below to install, configure, and run the HIDS on your Linux machine.
@@ -46,7 +46,7 @@ Clone the project repository and navigate into the project directory:
 ```bash
 
 git clone https://github.com/YOUR_USERNAME/Host-Based-Intrusion-Detection-System-HIDS-.git
-cd Python-HIDS-Linux
+cd Host-Based-Intrusion-Detection-System-HIDS-
 ```
 
 ## 3. Install Python & Dependencies
