@@ -45,7 +45,7 @@ Clone the project repository and navigate into the project directory:
 
 ```bash
 
-git clone https://github.com/YOUR_USERNAME/Host-Based-Intrusion-Detection-System-HIDS-.git
+git clone https://github.com/SoorajKM1/Host-Based-Intrusion-Detection-System-HIDS-.git
 cd Host-Based-Intrusion-Detection-System-HIDS-
 ```
 
